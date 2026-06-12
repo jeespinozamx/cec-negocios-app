@@ -43,52 +43,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    <script>
-        const ctx = document.getElementById('chartTipos');
-
-        new Chart(ctx,{
-            type:'bar',
-            data:{
-                labels:[
-                    'Papelerías',
-                    'Panaderías',
-                    'Abarrotes',
-                    'Farmacias',
-                    'Carnicerías'
-                ],
-                datasets:[{
-                    label:'Cantidad',
-                    data:[35,42,31,22,28]
-                }]
-            },
-            options:{
-                indexAxis:'y'
-            }
-        });
-
-        const map = L.map('map').setView([19.5963,-98.93974],15);
-
-        L.tileLayer(
-        'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
-        ).addTo(map);
-
-        L.marker([19.59638,-98.9398])
-        .addTo(map)
-        .bindPopup('Panadería San Juan');
-
-        L.marker([19.597253,-98.943465])
-        .addTo(map)
-        .bindPopup('Papelería López');
-
-        L.marker([19.594438,-98.942912])
-        .addTo(map)
-        .bindPopup('Ferreteria El Mike');
-    </script>
-
+    
 </body>
-
 </html>
