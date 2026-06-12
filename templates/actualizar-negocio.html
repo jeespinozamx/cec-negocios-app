@@ -1,0 +1,144 @@
+{% extends 'layouts/base-layout.html' %}
+{% block content %}
+
+    <h2 class="page-title">
+        Actualizar negocio
+    </h2>
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <form>
+
+                <div class="row">
+                    
+                    <h4>Datos del negocio</h4>
+
+                    <div class="col-md-12 mb-3">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" value="Panadería San Miguel">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Correo</label>
+                        <input type="text" class="form-control" placeholder="" value="panaderiasm@gmail.com">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Teléfono 1</label>
+                        <input type="text" class="form-control" placeholder="" value="5512345678">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Teléfono 2</label>
+                        <input type="text" class="form-control" placeholder="" value="5598765432">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Teléfono 3</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    
+
+                    
+
+                    <div class="col-md-6 mb-3">
+                        <label>Rubro</label>
+                        <input type="text" class="form-control" placeholder="" value="Panaderia">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label>Tipo negocio</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected value="">Seleccione uno</option>
+                            <option value="Fijo">Fijo</option>
+                            <option value="Semifijo">Semifijo</option>
+                        </select>
+                    </div>
+                    
+                    <h4>Dias de funcionamiento</h4>
+
+                    <div class="col-md-12 mb-3">
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault" checked>
+                            <label class="form-check-label" for="checkDefault">
+                                Lunes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                            <label class="form-check-label" for="checkChecked">
+                                Martes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                            <label class="form-check-label" for="checkChecked">
+                                Miercoles
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                            <label class="form-check-label" for="checkChecked">
+                                Jueves
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                            <label class="form-check-label" for="checkChecked">
+                                Viernes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked">
+                            <label class="form-check-label" for="checkChecked">
+                                Sábado
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked">
+                            <label class="form-check-label" for="checkChecked">
+                                Domingo
+                            </label>
+                        </div>
+                    </div>
+
+                    <h4>Ubicación</h4>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Latutud</label>
+                        <input type="text" class="form-control" placeholder="" value="19.59638">
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <label>Longitud</label>
+                        <input type="text" class="form-control" placeholder="" value="-98.9398">
+                    </div>
+
+                    <h4>Datos del propietario</h4>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" value="Juan">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" value="Pérez">
+                    </div>
+
+                </div>
+
+                <button class="btn btn-success">
+                    Actualizar
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    {% endblock %}

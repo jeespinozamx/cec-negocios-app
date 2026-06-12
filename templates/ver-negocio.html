@@ -1,0 +1,66 @@
+{% extends 'layouts/base-layout.html' %}
+{% block content %}
+    <h2 class="page-title">
+        Detalle del Negocio
+    </h2>
+
+    <div class="card">
+
+        <div class="card-body">
+
+            
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <p><strong>Nombre:</strong> Panadería San Juan</p>
+
+                    <p><strong>Correo:</strong> Correo</p>
+
+                    <p><strong>Teléfonos:</strong> 5512345678, 5598765432</p>
+
+                    <p><strong>Propietario:</strong> Juan Pérez</p>
+
+                    <p><strong>Dirección:</strong> Calle Hidalgo 123</p>
+
+                    <p><strong>Rubro:</strong> Panadería</p>
+
+                    <p><strong>Tipo:</strong> Fijo</p>
+
+                    <p><strong>Días de funcionamiento:</strong> Lunes, Martes, Miercoles, Jueves, Viernes, Sábado</p>
+
+                    <p><strong>Latitud:</strong>19.59638</p>
+
+                    <p><strong>Longitud:</strong>-98.9398</p>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div id="map"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        const map = L.map('map').setView([19.5963,-98.93974], 16);
+
+        L.tileLayer(
+            'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+        ).addTo(map);
+
+        L.marker([19.59638,-98.9398])
+        .addTo(map)
+        .bindPopup('Panadería San Juan')
+        .openPopup();
+    </script>
+
+{% endblock %}
