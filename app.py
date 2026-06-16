@@ -1,22 +1,32 @@
 from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, text
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
 
 load_dotenv(override=True)
 
+db= SQLAlchemy()
+
 app= Flask(__name__)
-engine = create_engine(os.environ.get('STRING_CONEXION'))
 
+app.config['SQLALCHEMY_DATABASE_URI']= os.environ.get('STRING_CONEXION')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
+db.init_app(app)
+
+@app.route("/")
+def index():
+    consulta= text("SELECT * FROM negocios LIMIT 5")
+    resultado= db.session.execute(consulta)
+
+    negocios= resultado.mappings().all()
+    print(negocios)
+
+    return render_template("index.html", negocios=negocios)
 
 @app.route("/login")
 def login():
-    query= text('SELECT * FROM negocios')
-    with engine.connect() as connection:
-        result= connection.execute(query)
-        for row in result:
-            print(row) 
     return render_template("login.html")
 
 # Equipo 1
