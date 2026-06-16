@@ -1,0 +1,114 @@
+{% extends 'layouts/base-layout.html' %}
+{% block content %}
+    <h2 class="page-title">
+        Negocios
+    </h2>
+
+    <div class="card">
+
+        <div class="card-body">
+            <form action="">
+                <div class="row">
+                    
+                    <h4>Busqueda</h4>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label>Rubro</label>
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected value="">Seleccione uno</option>
+                            <option value="Panaderia">Panaderias</option>
+                            <option value="Carnicería">Carniceria</option>
+                            <option value="Papelería">Papelería</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label>Tipo</label>
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected value="">Seleccione uno</option>
+                            <option value="Fijo">Fijo</option>
+                            <option value="Semifijo">Semifijo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <button class="btn btn-success btn-sm">Buscar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <br>
+    <div class="card">
+
+        <div class="card-body">
+
+            <p><b>Se encontaron 2 resultados</b></p>
+
+            <table class="table table-hover">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Negocio</th>
+                        <th>Propietario</th>
+                        <th>Rubro</th>
+                        <th>Tipo</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Panadería San Juan</td>
+                        <td>Juan Pérez</td>
+                        <td>Panadería</td>
+                        <td>
+                            <span class="badge badge-activo">
+                                Fijo
+                            </span>
+                        </td>
+                        <td>
+                            <a href="{{ url_for('ver_negocio') }}" class="btn btn-success btn-sm">
+                                Ver
+                            </a>
+                            <a href="{{ url_for('actualizar_negocio') }}" class="btn btn-success btn-sm">
+                                Actualizar
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Papelería López</td>
+                        <td>Ana López</td>
+                        <td>Papelería</td>
+                        <td>
+                            <span class="badge badge-semi">
+                                Semifijo
+                            </span>
+                        </td>
+                        <td>
+                            <a href="ver-negocio.html" class="btn btn-success btn-sm">
+                                Ver
+                            </a>
+                            <a href="actualizar-negocio.html" class="btn btn-success btn-sm">
+                                Actualizar
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+{% endblock %}

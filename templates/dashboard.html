@@ -1,0 +1,96 @@
+{% extends 'layouts/base-layout.html' %}
+{% block content %}
+
+    <h2 class="page-title">
+        Dashboard
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card card-stat">
+                <h6>Total Negocios</h6>
+                <h2>258</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-stat">
+                <h6>Negocios Fijos</h6>
+                <h2>164</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-stat">
+                <h6>Negocios Semifijos</h6>
+                <h2>94</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-5">
+            <div class="card p-3">
+                <canvas id="chartTipos"></canvas>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card p-3">
+                <div id="map"></div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        const ctx = document.getElementById('chartTipos');
+
+        new Chart(ctx,{
+            type:'bar',
+            data:{
+                labels:[
+                    'Papelerías',
+                    'Panaderías',
+                    'Abarrotes',
+                    'Farmacias',
+                    'Carnicerías'
+                ],
+                datasets:[{
+                    label:'Cantidad',
+                    data:[35,42,31,22,28]
+                }]
+            },
+            options:{
+                indexAxis:'y'
+            }
+        });
+
+        const map = L.map('map').setView([19.5963,-98.93974],15);
+
+        L.tileLayer(
+        'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+        ).addTo(map);
+
+        L.marker([19.59638,-98.9398])
+        .addTo(map)
+        .bindPopup('Panadería San Juan');
+
+        L.marker([19.597253,-98.943465])
+        .addTo(map)
+        .bindPopup('Papelería López');
+
+        L.marker([19.594438,-98.942912])
+        .addTo(map)
+        .bindPopup('Ferreteria El Mike');
+    </script>
+
+{% endblock %}
